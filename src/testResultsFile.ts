@@ -37,6 +37,7 @@ function parseUnitTestResults(xml: Element): TestResult[] {
         results.push(new TestResult(
             getAttributeValue(nodes[i], "testId"),
             getAttributeValue(nodes[i], "outcome"),
+            getTextContentForTag(nodes[i], "Output"),
             getTextContentForTag(nodes[i], "Message"),
             getTextContentForTag(nodes[i], "StackTrace"),
         ));
